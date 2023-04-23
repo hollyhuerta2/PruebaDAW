@@ -2,6 +2,7 @@ package Modelo.HAHP;
 
 import java.io.Serializable;
 import java.time.LocalDate;
+import java.util.Date;
 
 public class Alumnos implements Serializable {
     private static final Long serialVersionUID = 1L;
@@ -10,16 +11,24 @@ public class Alumnos implements Serializable {
     private int edad;
     private LocalDate fecha;
     private String celular, email, direc;
-
-    public Alumnos (){
+    public Alumnos(){}
+    public Alumnos(int matricula, Nombrecom nombrealum, int edad, LocalDate fecha, String celular, String email, String direc) {
+        this.matricula = matricula;
+        this.nombrealum = nombrealum;
+        this.edad = edad;
+        this.fecha = fecha;
+        this.celular = celular;
+        this.email = email;
+        this.direc = direc;
     }
-    public Alumnos(int matricula, Nombrecom nombrealum,int edad,LocalDate fecha){
+
+    public Alumnos(int matricula, Nombrecom nombrealum, int edad, LocalDate fecha){
         this.matricula = matricula;
         this.nombrealum = nombrealum;
         this.edad = edad;
         this.fecha = fecha;
     }
-    public Alumnos(String celular,String email,String direc){
+    public Alumnos(int matricula, String nombre, String paterno, String materno, int edad, String celular, String email, String direc, Date fecha){
         this.celular = celular;
         this.email = email;
         this.direc = direc;
