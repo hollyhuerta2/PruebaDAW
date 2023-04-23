@@ -2,6 +2,7 @@ package Modelo.HAHP;
 
 import java.io.Serializable;
 import java.time.LocalDate;
+import java.util.Date;
 
 public class Profesores implements Serializable {
     public static final Long serialVersionUID = 1L;
@@ -13,7 +14,9 @@ public class Profesores implements Serializable {
     private String telef, celu, email,lugarest;
     private int idecont,idetipoest;
 
-    public Profesores(){
+    public Profesores(){}
+
+    public Profesores(int idprof, String nombre, String paterno, String materno, String idcont, String materiaesp, String direc, String telef, String celu, String idetipoest, String email, Date fechaNam, String lugar){
     }
     public Profesores(int idprof,int idecont,int idetipoest, LocalDate fechanam){
         this.idprof = idprof;
