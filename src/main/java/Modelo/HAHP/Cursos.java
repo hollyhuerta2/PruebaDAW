@@ -11,6 +11,14 @@ public class Cursos implements Serializable {
 
     public Cursos(){}
 
+    public Cursos(int idcurso, String materiafk, String horario, int profk, int semesfk, int cupo) {
+        this.idcurso = idcurso;
+        this.materiafk = materiafk;
+        this.horario = horario;
+        this.profk = profk;
+        this.semesfk = semesfk;
+        this.cupo = cupo;
+    }
     public Cursos(int idcurso, int profk, int semesfk, int cupo){
         this.idcurso = idcurso;
         this.profk= profk;
