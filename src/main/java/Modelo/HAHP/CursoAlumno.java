@@ -10,7 +10,15 @@ public class CursoAlumno implements Serializable {
 
     public CursoAlumno(){
     }
-    public CursoAlumno(int idcursoa, int alumfk, int cursofk1,int calif){
+
+    public CursoAlumno(int idcursoa, int alumfk, int cursofk1, int calif, String opo) {
+        this.idcursoa = idcursoa;
+        this.alumfk = alumfk;
+        this.cursofk1 = cursofk1;
+        this.calif = calif;
+        this.opo = opo;
+    }
+    public CursoAlumno(int idcursoa, int alumfk, int cursofk1, int calif){
         this.idcursoa = idcursoa;
         this.alumfk = alumfk;
         this.cursofk1 = cursofk1;

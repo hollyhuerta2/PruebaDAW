@@ -1,6 +1,8 @@
 package Datos;
 
-import Modelo.HAHP.Cursos;
+
+import Modelo.HAHP.CursoAlumno;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -8,29 +10,27 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-//DAO = Data Access Object
-public class CursosDAO {
+public class CursoAlumnoDAO {
     private static final String selectSQL ="SELECT *FROM cursos";
-    public List<Cursos> listar() {
+    public List<CursoAlumno> listar() {
         Connection conn = null;
         PreparedStatement ps = null;
         ResultSet rs = null;
-        Cursos curso = null;
-        List<Cursos> cursos = new ArrayList<>();
+        CursoAlumno curso = null;
+        List<CursoAlumno> cursoalum = new ArrayList<>();
         try {
             conn = Conexion.getConnection();
             ps = conn.prepareStatement(selectSQL);
             rs = ps.executeQuery();
 
             while (rs.next()) {
-                int idcurso = rs.getInt("idcurso");
-                String materiafk = rs.getString("materiafk");
-                String horario = rs.getString("horario");
-                int profk = rs.getInt("profk");
-                int semesfk = rs.getInt("semestre");
-                int cupo = rs.getInt("cupo");
-                curso = new Cursos(idcurso,materiafk,horario,profk,semesfk,cupo);
-                cursos.add(curso);
+                int idcursoa = rs.getInt("idcurso");
+                int alumfk = rs.getInt("alumno");
+                int cursofk1 = rs.getInt("curso");
+                int calif = rs.getInt("calificacion");
+                String opo = rs.getString("oportunidad");
+                curso = new CursoAlumno(idcursoa,alumfk,cursofk1,calif,opo);
+                cursoalum.add(curso);
             }
         } catch (SQLException ex) {
             ex.printStackTrace(System.out);
@@ -39,6 +39,6 @@ public class CursosDAO {
             Conexion.close(ps);
             Conexion.close(conn);
         }
-        return cursos;
+        return cursoalum;
     }
 }
