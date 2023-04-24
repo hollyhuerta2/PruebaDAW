@@ -10,7 +10,13 @@ public class Salones implements Serializable {
 
     public Salones(){
     }
-    public Salones(int idesal,int pupitres){
+    public Salones(int idesal, String lugar, int pupitres) {
+        this.idesal = idesal;
+        this.lugar = lugar;
+        this.pupitres = pupitres;
+    }
+
+    public Salones(int idesal, int pupitres){
         this.idesal = idesal;
         this.pupitres = pupitres;
     }
