@@ -10,6 +10,15 @@ public class CursoSalon implements Serializable {
     private String dia, hora,mes;
     public CursoSalon(){
     }
+    public CursoSalon(int curso1, int cursofk, int salonfk, String dia, String hora, String mes) {
+        this.curso1 = curso1;
+        this.cursofk = cursofk;
+        this.salonfk = salonfk;
+        this.dia = dia;
+        this.hora = hora;
+        this.mes = mes;
+    }
+
     public CursoSalon(int curso1, int cursofk, int salonfk){
         this.curso1 = curso1;
         this.cursofk = cursofk;
