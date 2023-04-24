@@ -10,7 +10,14 @@ public class Materia implements Serializable {
 
     public Materia(){}
 
-    public Materia (String codmat,String nombremat){
+    public Materia(String codmat, String nombremat, int cred, int numhoras, int tipomat) {
+        this.codmat = codmat;
+        this.nombremat = nombremat;
+        this.cred = cred;
+        this.numhoras = numhoras;
+        this.tipomat = tipomat;
+    }
+    public Materia (String codmat, String nombremat){
         this.codmat = codmat;
         this.nombremat = nombremat;
     }
