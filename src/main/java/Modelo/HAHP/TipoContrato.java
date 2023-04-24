@@ -9,6 +9,7 @@ public class TipoContrato implements Serializable{
 
     public TipoContrato(){
     }
+
     public TipoContrato(int idcont){
         this.idcont = idcont;
     }
